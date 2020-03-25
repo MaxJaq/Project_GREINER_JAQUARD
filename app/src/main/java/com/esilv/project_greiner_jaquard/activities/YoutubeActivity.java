@@ -30,7 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class YoutubeActivity extends AppCompatActivity {
     private static final String TAG = "YoutubeActivity";
-    private static final String API_KEY = "AIzaSyDs48Tpp5DJtsvoR1zNobmJYhfHGrTPzsY";
+    private static final String API_KEY = "AIzaSyCgTY6Lhj-eSgwapJfDlFQpWT5UOVt1a9I";
 
     private EditText editText;
     private RecyclerView recyclerView;
@@ -55,12 +55,12 @@ public class YoutubeActivity extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.nav_home:
-                        startActivity(new Intent(getApplicationContext()
-                                , YoutubeActivity.class));
-                        overridePendingTransition(0,0);
+
                         return true;
                     case R.id.nav_challenges:
-
+                        startActivity(new Intent(getApplicationContext()
+                                , ListVideoActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.nav_score:

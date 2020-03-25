@@ -126,7 +126,8 @@ public class Profile extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(Profile.this, "Signed out successfully !", Toast.LENGTH_LONG).show();
-                        finish();
+                        startActivity(new Intent(getApplicationContext()
+                                , MainActivity.class));
                     }
                 });
 

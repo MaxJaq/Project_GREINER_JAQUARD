@@ -5,12 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.ListVideoActivity">
+    <TextView
+        android:id="@+id/Titre"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:text="Challenge COVID-éfi"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/Titre"
         android:id="@+id/recyclerView2"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:layout_width="match_parent"
         />
+    <TextView
+        android:layout_below="@id/recyclerView2"
+        android:id="@+id/Daily"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal"
+        android:text="Fais défiler pour plus de challenge !"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 

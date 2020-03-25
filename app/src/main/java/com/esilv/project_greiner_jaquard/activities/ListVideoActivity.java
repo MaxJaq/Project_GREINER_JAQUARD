@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import com.esilv.project_greiner_jaquard.R;
 import com.esilv.project_greiner_jaquard.adapters.MyChallengeAdapter;
@@ -29,23 +30,22 @@ public class ListVideoActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView2);
 
-        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/watch?v=-FUUibQBeL4\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
+        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/-FUUibQBeL4\" frameborder=\"0\" allowfullscreen></iframe>"));
 
-        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/watch?v=qTcFPMbsLWM\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
+        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/qTcFPMbsLWM\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
 
-        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/watch?v=jVZnk22cbUg\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
+        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/jVZnk22cbUg\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
 
-        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/watch?v=e35YHFinxBM\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
+        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/e35YHFinxBM\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
 
-        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/watch?v=JgXeIv6nNow\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
+        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/JgXeIv6nNow\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
 
-        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/watch?v=8aaXZDazPxs\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
+        myChallenge.add(new Challenge("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/8aaXZDazPxs\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>"));
 
 
         myAdapter= new MyChallengeAdapter(myChallenge);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL,false));
         mRecyclerView.setAdapter(myAdapter);
-
 
 
         //Initialize and Assign Variables
@@ -79,5 +79,9 @@ public class ListVideoActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
+
+
     }
 }

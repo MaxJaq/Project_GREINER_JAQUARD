@@ -6,21 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".activities.Profile"
     >
-
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_account"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/icon_account"/>
 
     <TextView
-       android:layout_marginTop="50dp"
+        android:layout_below="@+id/icon_account"
+       android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:textColor="#000"
         android:gravity="center"
+        android:textSize="20sp"
         android:id="@+id/textName"></TextView>
 
     <TextView
         android:layout_below="@id/textName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="100dp"
+        android:textSize="15sp"
         android:gravity="center"
         android:id="@+id/textEmail"></TextView>
 
