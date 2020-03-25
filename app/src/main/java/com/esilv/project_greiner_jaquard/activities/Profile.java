@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class SecondActivity extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
 
 
     private TextView name, email;
@@ -60,7 +60,7 @@ public class SecondActivity extends AppCompatActivity {
         youtubeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, YoutubeActivity.class);
+                Intent intent = new Intent(Profile.this, YoutubeActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +68,7 @@ public class SecondActivity extends AppCompatActivity {
         challengeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, ListVideoActivity.class);
+                Intent intent = new Intent(Profile.this, ListVideoActivity.class);
                 startActivity(intent);
             }
         });
@@ -85,7 +85,7 @@ public class SecondActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //Set Home Selected
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+        bottomNavigationView.setSelectedItemId(R.id.nav_score);
 
         //Perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -94,19 +94,18 @@ public class SecondActivity extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.nav_home:
-
-                        return true;
-
-                    case R.id.nav_challenges:
                         startActivity(new Intent(getApplicationContext()
                                 , YoutubeActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.nav_challenges:
+                        startActivity(new Intent(getApplicationContext()
+                                , ListVideoActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
                     case R.id.nav_score:
-                        startActivity(new Intent(getApplicationContext()
-                        , Score.class));
-                        overridePendingTransition(0,0);
+
                         return true;
                 }
 
@@ -126,7 +125,7 @@ public class SecondActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(SecondActivity.this, "Signed out successfully !", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Profile.this, "Signed out successfully !", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 });

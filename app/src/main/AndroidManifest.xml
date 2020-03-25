@@ -16,8 +16,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activities.ListVideoActivity"></activity>
         <activity android:name=".activities.DetailActivity" />
-        <activity android:name=".activities.Score" />
-        <activity android:name=".activities.SecondActivity" />
+        <activity android:name=".activities.Profile" />
         <activity android:name=".activities.YoutubeActivity" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>

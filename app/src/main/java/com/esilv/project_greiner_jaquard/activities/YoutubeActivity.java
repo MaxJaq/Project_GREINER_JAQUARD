@@ -11,22 +11,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.esilv.project_greiner_jaquard.R;
-import com.esilv.project_greiner_jaquard.activities.Score;
-import com.esilv.project_greiner_jaquard.activities.SecondActivity;
 import com.esilv.project_greiner_jaquard.adapters.YoutubeSearchItemAdapter;
 import com.esilv.project_greiner_jaquard.api.YoutubeService;
 import com.esilv.project_greiner_jaquard.models.YoutubeSearchItem;
 import com.esilv.project_greiner_jaquard.models.YoutubeSearchResponse;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.youtube.player.YouTubeBaseActivity;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerView;
 
 import java.util.List;
 
@@ -48,6 +40,42 @@ public class YoutubeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube);
+
+
+        //Initialize and Assign Variables
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        //Set Home Selected
+        bottomNavigationView.setSelectedItemId(R.id.nav_challenges);
+
+        //Perform ItemSelectedListener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.nav_home:
+                        startActivity(new Intent(getApplicationContext()
+                                , YoutubeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.nav_challenges:
+
+                        return true;
+
+                    case R.id.nav_score:
+                        startActivity(new Intent(getApplicationContext()
+                                , Profile.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
+
+
         editText = findViewById(R.id.editText);
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -77,6 +105,8 @@ public class YoutubeActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
             }
+
+
         });
 
     }
@@ -99,6 +129,8 @@ public class YoutubeActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
 
 

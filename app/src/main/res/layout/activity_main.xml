@@ -7,19 +7,23 @@
     android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="50dp"
-    android:text="Bienvenue sur Challenge COVID App"
-    android:gravity="center_horizontal"></EditText>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:layout_centerHorizontal="true"
+        android:text="Welcome To COVID-efi"
+        android:textStyle="bold"></TextView>
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        />
+        >
+
+    </com.google.android.gms.common.SignInButton>
+
+
 
 </RelativeLayout>
