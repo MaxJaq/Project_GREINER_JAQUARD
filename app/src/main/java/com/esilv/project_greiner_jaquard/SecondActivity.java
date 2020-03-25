@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import okhttp3.Challenge;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -71,7 +75,46 @@ public class SecondActivity extends AppCompatActivity {
             name.setText(personName);
             email.setText(personEmail);
         }
-    }
+
+        //Initialize and Assign Variables
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        //Set Home Selected
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+
+        //Perform ItemSelectedListener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.nav_home:
+
+                        return true;
+
+                    case R.id.nav_challenges:
+                        startActivity(new Intent(getApplicationContext()
+                                , YoutubeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.nav_score:
+                        startActivity(new Intent(getApplicationContext()
+                        , Score.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
+        }
+
+
+
+
+
 
     private void signOut() {
         mGoogleSignInClient.signOut()
