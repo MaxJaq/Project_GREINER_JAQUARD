@@ -46,7 +46,7 @@ public class YoutubeActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //Set Home Selected
-        bottomNavigationView.setSelectedItemId(R.id.nav_challenges);
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
 
         //Perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

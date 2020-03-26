@@ -9,7 +9,7 @@
         android:id="@+id/Titre"
         android:layout_marginTop="100dp"
         android:gravity="center_horizontal"
-        android:text="Challenge COVID-éfi"
+        android:text=" COVID-éfi \nDaily  Challenges"
         android:textColor="#000"
         android:textSize="30sp"
         android:layout_marginBottom="50dp"
@@ -22,12 +22,13 @@
         android:layout_height="200dp"
         android:layout_width="match_parent"
         />
+
     <TextView
         android:layout_below="@id/recyclerView2"
         android:id="@+id/Daily"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
-        android:text="Fais défiler pour plus de challenge !"
+        android:text="Swipe Left to see more !"
         android:textColor="#000"
         android:textSize="20sp"
         android:layout_marginBottom="50dp"

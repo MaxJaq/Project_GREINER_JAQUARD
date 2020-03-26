@@ -10,20 +10,22 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_2"
-        android:label="Welcome To COVID-efi"
+        android:label="COVID-efi"
         android:roundIcon="@mipmap/ic_launcher_2_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.ListVideoActivity"></activity>
         <activity android:name=".activities.DetailActivity" />
-        <activity android:name=".activities.Profile" />
-        <activity android:name=".activities.YoutubeActivity" />
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.Profile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.YoutubeActivity" />
+        <activity android:name=".activities.MainActivity">
         </activity>
     </application>
 
