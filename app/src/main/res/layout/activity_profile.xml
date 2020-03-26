@@ -33,22 +33,24 @@
         android:gravity="center"
         android:id="@+id/textEmail"></TextView>
 
+
+    <Button
+        android:id="@+id/challenge_button"
+        android:layout_below="@+id/textEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TAKE YOUR DAILY CHALLENGE"> <!-- Ancien Challenges -->
+    </Button>
+
 <Button
     android:id="@+id/youtube_button"
-    android:layout_below="@+id/textEmail"
+    android:layout_below="@+id/challenge_button"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Search Others on Youtube"></Button> <!-- Ancien GO To Youtube -->
 
-    <Button
-        android:id="@+id/challenge_button"
-        android:layout_below="@+id/youtube_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TAKE YOUR DAILY CHALLENGE"> <!-- Ancien Challenges -->
-</Button>
 <Button
-    android:layout_below="@id/challenge_button"
+    android:layout_below="@id/youtube_button"
     android:text="Sign Out"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
